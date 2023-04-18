@@ -3,9 +3,9 @@ Aplicação feita com javascript e react native para identificar plantas com bas
 
 # Membros do projeto
 
- Raissa Sousa de Oliveira
+ # Raissa Sousa de Oliveira
  
- contatos:
+
  
  whatsApp: +55 91 8884-2612
  
@@ -13,9 +13,9 @@ Aplicação feita com javascript e react native para identificar plantas com bas
  
  
  
- Lucas Rodrigues Alves
+ # Lucas Rodrigues Alves
  
- contatos:
+
  
  whatsapp: 91 982221110
  
@@ -23,7 +23,7 @@ Aplicação feita com javascript e react native para identificar plantas com bas
  
  
  
- Ethan Costa
+ # Ethan Costa
  
   WhatsApp: 91 98269 2915 
   
@@ -31,7 +31,7 @@ Aplicação feita com javascript e react native para identificar plantas com bas
   
   
   
-  Renato Cordeiro
+ # Renato Cordeiro
   
   whatsapp: 91 988133373
   
@@ -39,7 +39,7 @@ Aplicação feita com javascript e react native para identificar plantas com bas
   
   
   
-  Caio Victorino 
+  # Caio Victorino 
   
   WhatsApp: 91 988557846
   
