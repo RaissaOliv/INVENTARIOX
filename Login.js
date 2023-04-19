@@ -1,28 +1,31 @@
-import { StyleSheet, StatusBar, SafeAreaView, Text, View, TouchableOpacity, Button, TextInput} from 'react-native';
+import { StyleSheet, StatusBar, SafeAreaView, Text, View, TouchableOpacity, TextInput} from 'react-native';
+import {useFonts, Quicksand_400Regular, Quicksand_700Bold} from '@expo-google-fonts/quicksand';
 
 
 export default function Login() {
+  const [fonteCarregada] = useFonts({
+    "QuicksandRegular": Quicksand_400Regular,
+    "QuicksandBold": Quicksand_700Bold});
+
+  if(!fonteCarregada){
+   <View></View>
+  } 
+
+  else {
   return (
-    
-    <View style={styles.container}>
-      <Text style={styles.titulos} >Entre seu email e senha para acessar sua conta</Text>
-      <View style={{ alignItems: 'row', padding: 20}}>
-      <Text style={{fontWeight:'200', padding: 10, textAlign:'center'}}>E-mail</Text>
-      <TextInput style={styles.inputEstilo} placeholder='insira seu email'></TextInput>
-      <Text style={{fontWeight:'200', padding: 10, textAlign:'center'}}>Senha</Text>
-      <TextInput style={styles.inputEstilo} placeholder='insira sua senha'></TextInput>
-      
-      <View style={{flexDirection: 'column-reverse'}}>
-      <TouchableOpacity
-      style={styles.botao}
-      >
-       <Text style={styles.textoBotao}>Fazer login</Text>
-      </TouchableOpacity>
-      </View>
-      <StatusBar style="auto" />
-    </View>
-    </View>
+   <View style={styles.container}>
+   <Text style={styles.titulos}>Entre com seu email e senha para acessar a conta</Text>
+   <Text style={styles.QuicksandRegular}>Email: </Text>
+   <TextInput style = {styles.CampoInput} placeholder='email'></TextInput>
+   <Text style={styles.QuicksandRegular}>Senha: </Text>
+   <TextInput style = {styles.CampoInput} placeholder='senha'></TextInput>
+   <TouchableOpacity style={styles.botao}>
+    <Text style={styles.textoBotao}>Entrar</Text>
+   </TouchableOpacity>
+   <StatusBar style="auto" />
+   </View>
   );
+}
 }
 
 const styles = StyleSheet.create({
@@ -31,39 +34,45 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     justifyContent: 'center',
     padding: 20,
+
   },
   titulos: {
     fontSize: 20,
-    fontWeight: 'bold',
-    color: '#000',
-   
+    color: '#000', 
+    fontFamily: 'QuicksandBold'
   },
   textoComum: {
-    fontSize: 15,
+    fontSize: 16,
     color: '#FFF',
-    fontFamily: 'sans-serif-condensed',
-  },
+    fontFamily: 'QuicksandRegular',
+    textAlign: 'center'
+    },
   botao: {
-    backgroundColor: '#74CD5E',
+    backgroundColor: '#FFF',
     padding: 10, 
-    borderRadius: 5
+    borderRadius: 5,
+    margin: 10,
+    width: 160,
+    height: 40
+
   },
 
   textoBotao: {
-    color: '#FFF', 
+    color: '#000000', 
     textAlign: 'center', 
-    fontWeight: 'bold'
+    fontFamily: 'QuicksandBold'
   },
 
-  textoMini: {
-    color:"#000",
-    
-  },
-
-  inputEstilo: {
+  CampoInput: {
     height: 40,
     margin: 12,
     borderWidth: 1,
     padding: 10,
+    width: 100,
+    borderColor: '#000',
+    borderRadius: 2
   }
-});
+
+}
+
+);
