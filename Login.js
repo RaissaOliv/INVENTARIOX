@@ -2,7 +2,7 @@ import { StyleSheet, StatusBar, SafeAreaView, Text, View, TouchableOpacity, Text
 import {useFonts, Quicksand_400Regular, Quicksand_700Bold} from '@expo-google-fonts/quicksand';
 
 
-export default function Login() {
+export default function TelaInicial() {
   const [fonteCarregada] = useFonts({
     "QuicksandRegular": Quicksand_400Regular,
     "QuicksandBold": Quicksand_700Bold});
@@ -13,6 +13,7 @@ export default function Login() {
 
   else {
   return (
+  
    <View style={styles.container}>
    <Text style={styles.titulos}>Entre com seu email e senha para acessar a conta</Text>
    <Text style={styles.QuicksandRegular}>Email: </Text>
@@ -32,28 +33,37 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     padding: 20,
+   alignItems: 'flex-start',
+   
 
   },
   titulos: {
-    fontSize: 20,
+    fontSize: 25,
     color: '#000', 
-    fontFamily: 'QuicksandBold'
+    fontFamily: 'QuicksandBold',
+    paddingBottom: 30,
+    paddingTop: 50
+   
   },
   textoComum: {
-    fontSize: 16,
+    fontSize: 20,
     color: '#FFF',
     fontFamily: 'QuicksandRegular',
     textAlign: 'center'
     },
   botao: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#89DA85',
     padding: 10, 
     borderRadius: 5,
     margin: 10,
-    width: 160,
-    height: 40
+    width: "90%",
+    height: 40,
+    position: 'absolute',
+    bottom:0,
+    alignSelf: 'center',    
+  marginBottom: 40
 
   },
 
@@ -68,11 +78,13 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    width: 100,
-    borderColor: '#000',
+    width: '90%',
+    borderTopColor: "#FFF",
+    borderBottomColor: "#000",
+    borderLeftColor: "#FFF",
+    borderRightColor: "#FFF",
     borderRadius: 2
-  }
-
+  },
 }
 
 );
