@@ -1,14 +1,19 @@
 import { image, StyleSheet, FlatList, StatusBar, SafeAreaView, Text, View, TouchableOpacity, Button, TextInput} from 'react-native';
 import React from 'react';
 import {useFonts, Quicksand_400Regular, Quicksand_700Bold} from '@expo-google-fonts/quicksand';
-
+import { Feather } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons'
+import { Entypo } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons';
+import {Dimensions} from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import Texto from "../INVENTARIOX/src/componentes/Texto";
 
 import AppLoading from 'expo-app-loading';
 
 import Lista from './src/componentes/Lista';
 
-
+const windowWidth = Dimensions.get('window').width;
 export default function TelaInicial() {
 
   const [fonteCarregada] = useFonts({
@@ -28,12 +33,29 @@ export default function TelaInicial() {
   else {
   return (<>
     <SafeAreaView style={estilos.tela}>
+      
+    <SafeAreaView style={estilos.header}>
+    <View style={{layoutDirection: "ltr", alignContent: 'flex-start', alignItems: "flex-start"}}>
+      <Ionicons name="search-outline" size={25} color="black" />
+    </View>
+  <View style={{alignContent: "center", alignItems: "center",}}>
+   <Texto style={{ fontWeight: "bold", textAlign: "center", fontSize: 20}}>Pesquisar cultura</Texto>
+    </View>
+    <View style={{alignContent: "flex-end", layoutDirection: "rtl", alignItems: "flex-end"}}>
+    <FontAwesome name="user-circle" size={25} color="black" />
+    </View>
+    </SafeAreaView>
+
     <Texto style={estilos.texto}>Visto recentemente</Texto>
     <Lista/>
     <Texto style={estilos.texto}>Histórico de pesquisa</Texto>
     <Lista/>
     </SafeAreaView>
-    <View style={estilos.barra}></View>
+    <View style={estilos.barra}>
+    <Feather name="camera" size={24} color="black"/>
+    <AntDesign name="home" size={24} color="black" />
+    <Entypo name="box" size={24} color="black" />
+    </View>
 
   </>)
 
@@ -49,6 +71,13 @@ const estilos = StyleSheet.create ({
    alignItems: 'flex-start',
 
   },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: windowWidth/5.5,
+    
+  },
+
   container: {
     flexDirection: 'row',
     height: '100%',
@@ -65,22 +94,27 @@ backgroundColor: '#74CD5E',
   },
 
   barra: {
-    display: "flex",
 flexDirection: "row",
-alignItems: "center",
 padding: 10,
 gap: 66,
-justifyContent: "center",
+justifyContent: 'center',
+alignItems: "center",
 
 position: "absolute",
-width: 276,
-height: 64,
-left: 42.5,
+width: 300,
+height: 70,
+left: 50,
 bottom: 17,
+marginBottom: 20,
 
 backgroundColor: "#89DA85",
 borderRadius: 10
   }
+  
+
+
+})
+
   
 
 
