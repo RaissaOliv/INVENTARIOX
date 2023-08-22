@@ -54,7 +54,7 @@ export default function Home() {
       const project = 'all';
       try {
         const { status, data } = await axios.post(
-          `https://my-api.plantnet.org/v2/identify/${project}?api-key=2b109TRsLJrxklkWylCt3U3${API_LANG}&include-related-images=true`,
+          `https://my-api.plantnet.org/v2/identify/${project}?api-key=segredinho${API_LANG}&include-related-images=true`,
           form,
           {
             headers: {
